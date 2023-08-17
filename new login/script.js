@@ -25,7 +25,7 @@ toggleField.onclick = function () {
   }
 };
 
-const userInfo = []; 
+let userInfo = []; 
 
 
 if (localStorage.getItem("userInfo")) {
