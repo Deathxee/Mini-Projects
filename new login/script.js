@@ -1,13 +1,13 @@
 
 
-let title = document.getElementById("title");
-let nameField = document.getElementById("nameField");
-let signupBtn = document.getElementById("signupbtn");
-let signinBtn = document.getElementById("signinbtn");
-let toggleField = document.querySelector(".toggle");
-let userName = document.querySelector(".userName");
-let userEmail = document.querySelector(".userEmail");
-let userPassword = document.querySelector(".userPassword");
+const title = document.getElementById("title");
+const nameField = document.getElementById("nameField");
+const signupBtn = document.getElementById("signupbtn");
+const signinBtn = document.getElementById("signinbtn");
+const toggleField = document.querySelector(".toggle");
+const userName = document.querySelector(".userName");
+const userEmail = document.querySelector(".userEmail");
+const userPassword = document.querySelector(".userPassword");
 
 toggleField.onclick = function () {
   if (signinBtn.classList.contains("disable")) {
@@ -25,7 +25,7 @@ toggleField.onclick = function () {
   }
 };
 
-let userInfo = []; 
+const userInfo = []; 
 
 
 if (localStorage.getItem("userInfo")) {
