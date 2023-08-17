@@ -4,22 +4,22 @@ let title = document.getElementById("title");
 let nameField = document.getElementById("nameField");
 let signupBtn = document.getElementById("signupbtn");
 let signinBtn = document.getElementById("signinbtn");
-let togalField = document.querySelector(".togal");
+let toggleField = document.querySelector(".toggle");
 let userName = document.querySelector(".userName");
 let userEmail = document.querySelector(".userEmail");
 let userPassword = document.querySelector(".userPassword");
 
-togalField.onclick = function () {
+toggleField.onclick = function () {
   if (signinBtn.classList.contains("disable")) {
     signupBtn.classList.add("disable");
     signinBtn.classList.remove("disable");
-    togalField.innerHTML = "Sign Up";
+    toggleField.innerHTML = "Sign Up";
     title.innerHTML = "Sign In";
     nameField.style.maxHeight = "0";
   } else if (signupBtn.classList.contains("disable")) {
     signupBtn.classList.remove("disable");
     signinBtn.classList.add("disable");
-    togalField.innerHTML = "Sign In";
+    toggleField.innerHTML = "Sign In";
     title.innerHTML = "Sign Up";
     nameField.style.maxHeight = "65px";
   }
