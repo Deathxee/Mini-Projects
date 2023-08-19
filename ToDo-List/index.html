@@ -3,64 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ToDo-List</title>
+    <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<style>
-    *{
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        list-style: none;
-        text-decoration: none;
-        outline: none;
-    }
-    body{
-        background: linear-gradient(109deg, #2611CA 0%, #280202 100%);
-    }
-    .container{
-        background-color: aqua;
-        height: auto;
-        width: 25%;
-        padding: 20px;
-        margin: 10px auto;
-    }
-
-    
-    
-    .item{
-        display: flex;
-        align-items: baseline;
-        height:30px;
-        width: 100%;
-        background-color: #2611CA;
-            
-        }
-</style>
 <body>
     <div class="container">
-        <div class="heading">
-            <h1>My ToDo Lsit</h1>
-        </div>
-        <div class="addToList">
-            <input class="input" type="text">
-            <input type="button" class="button" value="">
-        </div>
-        <div class="lsitItems">
-            <div class="item">
-                <input type="checkbox" name="" id="">
-                <h2>Lorem ipsum dolor sit amet.</h2>
+        <div class="todo-app">
+            <h2>ToDo-List <img src="images/icon.png"> </h2>
+            <div class="row">
+                <input value=" " type="text" id="input-box " placeholder="Enter Your text " >
+                <button  onclick="addTask()" >Add</button>
             </div>
-            <div class="item">
-                <input type="checkbox" name="" id="">
-                <h2>Lorem ipsum dolor sit amet.</h2>
-            </div>
-            <div class="item">
-                <input type="checkbox" name="" id="">
-                <h2>Lorem ipsum dolor sit amet.</h2>
-            </div>
+            <ul id="list-container">
+                
+            </ul>
         </div>
     </div>
 </body>
+<script src="script.js"></script>
+
 </html>
