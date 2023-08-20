@@ -7,6 +7,17 @@ const userName = document.querySelector(".userName");
 const userEmail = document.querySelector(".userEmail");
 const userPassword = document.querySelector(".userPassword");
 
+
+const setLocalStorageValue = (key, value) => {
+  localStorage.setItem(key, JSON.stringify(value));
+};
+
+const getLocalStorageValue = (key) => {
+  return JSON.parse(localStorage.getItem(key));
+};
+
+
+
 toggleField.onclick = function () {
   if (signinBtn.classList.contains("disable")) {
     signupBtn.classList.add("disable");
@@ -25,13 +36,7 @@ toggleField.onclick = function () {
 
 let userInfo = [];
 
-const setLocalStorageValue = (key, value) => {
-  localStorage.setItem(key, JSON.stringify(value));
-};
 
-const getLocalStorageValue = (key) => {
-  return JSON.parse(localStorage.getItem(key));
-};
 
 if (localStorage.getItem("userInfo")) {
   userInfo = getLocalStorageValue("userInfo");
