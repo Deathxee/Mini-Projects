@@ -1,5 +1,3 @@
-
-
 const title = document.getElementById("title");
 const nameField = document.getElementById("nameField");
 const signupBtn = document.getElementById("signupbtn");
@@ -25,11 +23,18 @@ toggleField.onclick = function () {
   }
 };
 
-let userInfo = []; 
+let userInfo = [];
 
+const setLocalStorageValue = (key, value) => {
+  localStorage.setItem(key, JSON.stringify(value));
+};
+
+const getLocalStorageValue = (key) => {
+  return JSON.parse(localStorage.getItem(key));
+};
 
 if (localStorage.getItem("userInfo")) {
-  userInfo = JSON.parse(localStorage.getItem("userInfo"));
+  userInfo = getLocalStorageValue("userInfo");
 }
 
 signupBtn.onclick = () => {
@@ -40,7 +45,7 @@ signupBtn.onclick = () => {
   };
 
   userInfo.push(user);
-  localStorage.setItem("userInfo", JSON.stringify(userInfo)); // Save the updated user info
+  setLocalStorageValue(userInfo, userInfo);
   console.log(userInfo);
 };
 
@@ -49,7 +54,6 @@ userInfo.forEach((element) => {
 });
 
 let checkEmail = false;
-
 
 let checkPassword = false;
 
@@ -60,39 +64,32 @@ signinBtn.addEventListener("click", function name(params) {
     if (userEmail.value == Email) {
       console.log("Email correct");
       checkEmail = true;
-    }
-    else{
+    } else {
       console.log("Email incorrect");
     }
-  })
-  
+  });
 
-  userInfo.forEach(element => {
-    let Pass = element.pass
-    let name = element.name
-  if (userPassword.value == Pass){
-    console.log('Password correct');
-    checkPassword = true
-    
-  }
-  else{
-    console.log("Password incorrect");
-  }
+  userInfo.forEach((element) => {
+    let Pass = element.pass;
+    let name = element.name;
+    if (userPassword.value == Pass) {
+      console.log("Password correct");
+      checkPassword = true;
+    } else {
+      console.log("Password incorrect");
+    }
 
-  if (checkPassword && userPassword ){
-    console.log("User Loged In");
-    
-  }
-  else{
-    console.log("User not found");
-  }
+    if (checkPassword && userPassword) {
+      console.log("User Loged In");
+    } else {
+      console.log("User not found");
+    }
+  });
 });
-});
-
 
 function displayLoggedInUser() {
-  if (localStorage.getItem("loggedInUser")) {
-    const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+  if (getLocalStorageValue("loggedInUser")) {
+    const loggedInUser = getLocalStorageValue("loggedInUser");
     const loggedInUserName = loggedInUser.name;
     document.getElementById("loggedInUserName").textContent = loggedInUserName;
   }
@@ -116,7 +113,7 @@ signinBtn.addEventListener("click", function () {
         if (checkEmail && checkPassword) {
           console.log("User Logged In");
           localStorage.setItem("loggedInUser", JSON.stringify(element));
-          displayLoggedInUser(); 
+          displayLoggedInUser();
         }
       } else {
         console.log("Password incorrect");
@@ -130,10 +127,9 @@ signinBtn.addEventListener("click", function () {
 });
 
 signinBtn.addEventListener("click", function () {
-
   if (checkEmail && checkPassword) {
     console.log("User Logged In");
-    localStorage.setItem("loggedInUser", JSON.stringify(element));
+    setLocalStorageValue("loggedInUser", element);
     displayLoggedInUser();
   }
 });
@@ -142,7 +138,7 @@ window.onload = function () {
 };
 function displayLoggedInUser() {
   if (localStorage.getItem("loggedInUser")) {
-    const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+    const loggedInUser = getLocalStorageValue("loggedInUser");
     const loggedInUserName = loggedInUser.name;
     document.getElementById("loggedInUserName").textContent = loggedInUserName;
   }
