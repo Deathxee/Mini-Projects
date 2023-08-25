@@ -25,12 +25,14 @@ toggleField.onclick = function () {
     toggleField.innerHTML = "Sign Up";
     title.innerHTML = "Sign In";
     nameField.style.maxHeight = "0";
+    nameField.style.border = "none"
   } else if (signupBtn.classList.contains("disable")) {
     signupBtn.classList.remove("disable");
     signinBtn.classList.add("disable");
     toggleField.innerHTML = "Sign In";
     title.innerHTML = "Sign Up";
     nameField.style.maxHeight = "65px";
+    nameField.style.border = "2px solid #1449CA";
   }
 };
 
