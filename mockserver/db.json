@@ -1,0 +1,17 @@
+{
+  "posts": [
+    {
+      "test": 123
+    }
+  ],
+  "todos": [
+    {
+      "testing": "todo 22222",
+      "id": 1
+    },
+    {
+      "testing": "todo 2",
+      "id": 2
+    }
+  ]
+}
